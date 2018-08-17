@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Sketchpad</title>
 		<link href="style.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"> 
 		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script> -->
 		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script> -->
 		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js"></script> -->
@@ -21,9 +22,16 @@
 				<h1>Sketch: A First Look Into Using Javascript</h1>
 			</div>
 			<div></div>
-			<div></div>
+			<div class="left-container left-grid">
+				<button class="reset-button"><h2>RST</h2></button>
+				<form id="dim" type="text"><button form="dim" type="submit" class="canvas-dimension"><h2>DIM</h2></button></form>
+				<input type="text" name="name">
+			</div>
 			<div class="canvas-container canvas-grid"></div>
-			<div></div>
+			<div class="right-container right-grid">
+				<button class="erase"><h2>ERA</h2></button>
+				<button class="rainbow"><h2>RBW</h2></button>
+			</div>
 			<div></div>
 			<div class="footer-container footer-grid"></div>
 			<div class="test7"></div>
@@ -33,6 +41,8 @@
 	<script>
 	let gridSize = 32;
 	const container = document.querySelector('.canvas-container');
+	
+	//Creates CSS grid and fills grid with <div class="canvas"></div>
 	container.style.display = 'grid';
 	container.style.gridTemplateColumns = 'repeat(32, 1fr)';
 	container.style.gridTemplateRows = 'repeat(32, 1fr)';
@@ -41,18 +51,14 @@
 		content.classList.add('canvas');
 		container.appendChild(content);
 	}
-	<!-- container.style.display = 'grid'; -->
-	<!-- container.style.gridTemplateColumns = 'repeat(32, 1fr)'; -->
-	<!-- container.style.gridTemplateRows = 'repeat(32, 1fr)'; -->
+	//****************************************************************
 	
+	//Converts nodelist to an array and steps through them to set listeners 
 	const pixel = Array.from(document.querySelectorAll('.canvas'));
-	//console.log(pixel.length);
-	
 	for (var i = 0; i < gridSize*gridSize; i++) {
-	pixel[i].addEventListener('mouseover', mouseOver); 
+		pixel[i].addEventListener('mouseover', mouseOver); 
 	}
-	<!-- const pixel = document.querySelector('.canvas'); -->
-	<!-- pixel.onmouseover = mouseOver(pixel); -->
+	//*****************************************************************
 	
 	function mouseOver() {
 		this.style.backgroundColor = 'black';

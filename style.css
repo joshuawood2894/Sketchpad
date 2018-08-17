@@ -4,58 +4,103 @@
 }
 body {
 	/* background-color: red; */
-	font-family: 'Pathway Gothic One', sans-serif;
-	
-	
+	font-family: 'Press Start 2P', cursive;	
 }
+h1 {
+	grid-column: 2;
+	text-decoration: none;
+	color: black;
+	padding-bottom: 12px;
+}
+h2 {
+	font-family: 'Press Start 2P', cursive;	
+	color: white;
+	background-color: black;
+	margin: 0px;
+	padding: 0px;
+}
+
 
 
 .page-container {
-	padding-top: 12px;
-	padding-bottom: 38px;
-	/* padding-left: 25%; */
+	padding-top: 0px;
+	padding-bottom: 27px;
 	display: grid;
-	grid-template-columns: 2fr 500px 2fr;
-	grid-template-rows: 100px 500px 100px;	
-	/* background-color: #b30c0c;	 */
-	/* background-color: coral; */
-	margin-left: 100px;
-	margin-right: 100px;
-	margin-top: 0px;
+	grid-template-columns: auto auto auto;
+	grid-template-rows: auto 500px 13px;
+	position: absolute;
+	background-color: coral;
+	border: 5px solid black;
+	border-radius: 20px;
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 10px;
 	margin-bottom: 0px;
 }
-
 .canvas-container {
 	border: 6px solid black;
 	border-radius: 10px;
 }
-
 .canvas {
 	background-color: white;
 	border: 1px solid silver;
 }
-
-/* .header-grid h1{ */
-	 /* border: 1px dotted red; */
-  /* z-index: 999; */
-/* } */
-
-/* .canvas-container { */
-	/* display: grid;  */
-	/* grid-template-columns: repeat(64, 1fr);  */
-	/* grid-template-rows: repeat(64, 1fr); */
-/* } */
-
 .header-container {
 	display: grid;
 	grid-template-columns: 60px auto 60px;
 	grid-template-rows: auto;
 	text-align: center;
 	padding-top: 15px;
+	/* opacity: 0.65; */
 }
-
-h1 {
-	grid-column: 2;
-	text-decoration: none;
-	color: black;
+.left-container {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: 2fr repeat(4, 1fr);
+}
+.left-container, button, form {
+	border: 1px dotted red;
+	z-index: 999;
+}
+.reset-button {
+	grid-column: 1;
+	grid-row: 1;
+	text-align: center;
+}
+.canvas-dimension {
+	grid-column: 1;
+	grid-row: 2;
+	text-align: center;
+}
+.right-container {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: 1fr 1fr 1fr;
+}
+.erase {
+	grid-column: 1;
+	grid-row: 1;
+	text-align: center
+}
+.rainbow {
+	grid-column: 1;
+	grid-row: 2;
+	text-align: center;
+}
+button {
+	padding: 10px;
+	width: 80px;
+	height: 30px;
+	background-color: #ff4602;
+	padding-bottom: 35px;
+	margin: 15px;
+}
+input {
+	width: 80px;
+	height: 30px;
+	grid-column: 1;
+	grid-row: 3;
+	margin-left: 15px;
+	text-align: center;
+	border: none;
 }
