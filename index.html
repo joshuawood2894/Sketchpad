@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Sketchpad</title>
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script> -->
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script> -->
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js"></script> -->
+		
+		
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.js"></script> -->
+  </head>
+	</head>
+	
+	<body>
+		<div class="page-container page-grid">
+			<div></div>
+			<div class="header-container header-grid">
+				<h1>Sketch: A First Look Into Using Javascript</h1>
+			</div>
+			<div></div>
+			<div></div>
+			<div class="canvas-container canvas-grid"></div>
+			<div></div>
+			<div></div>
+			<div class="footer-container footer-grid"></div>
+			<div class="test7"></div>
+		</div>
+	</body>
+	
+	<script>
+	let gridSize = 32;
+	const container = document.querySelector('.canvas-container');
+	container.style.display = 'grid';
+	container.style.gridTemplateColumns = 'repeat(32, 1fr)';
+	container.style.gridTemplateRows = 'repeat(32, 1fr)';
+	for (var i = 0; i < gridSize*gridSize; i++) {
+		const content = document.createElement('div');
+		content.classList.add('canvas');
+		container.appendChild(content);
+	}
+	<!-- container.style.display = 'grid'; -->
+	<!-- container.style.gridTemplateColumns = 'repeat(32, 1fr)'; -->
+	<!-- container.style.gridTemplateRows = 'repeat(32, 1fr)'; -->
+	
+	const pixel = Array.from(document.querySelectorAll('.canvas'));
+	//console.log(pixel.length);
+	
+	for (var i = 0; i < gridSize*gridSize; i++) {
+	pixel[i].addEventListener('mouseover', mouseOver); 
+	}
+	<!-- const pixel = document.querySelector('.canvas'); -->
+	<!-- pixel.onmouseover = mouseOver(pixel); -->
+	
+	function mouseOver() {
+		this.style.backgroundColor = 'black';
+	}
+	
+	
+</script>
+
+	</script>
+	
+</html>

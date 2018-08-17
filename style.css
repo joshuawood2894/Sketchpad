@@ -1,0 +1,61 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+body {
+	/* background-color: red; */
+	font-family: 'Pathway Gothic One', sans-serif;
+	
+	
+}
+
+
+.page-container {
+	padding-top: 12px;
+	padding-bottom: 38px;
+	/* padding-left: 25%; */
+	display: grid;
+	grid-template-columns: 2fr 500px 2fr;
+	grid-template-rows: 100px 500px 100px;	
+	/* background-color: #b30c0c;	 */
+	/* background-color: coral; */
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.canvas-container {
+	border: 6px solid black;
+	border-radius: 10px;
+}
+
+.canvas {
+	background-color: white;
+	border: 1px solid silver;
+}
+
+/* .header-grid h1{ */
+	 /* border: 1px dotted red; */
+  /* z-index: 999; */
+/* } */
+
+/* .canvas-container { */
+	/* display: grid;  */
+	/* grid-template-columns: repeat(64, 1fr);  */
+	/* grid-template-rows: repeat(64, 1fr); */
+/* } */
+
+.header-container {
+	display: grid;
+	grid-template-columns: 60px auto 60px;
+	grid-template-rows: auto;
+	text-align: center;
+	padding-top: 15px;
+}
+
+h1 {
+	grid-column: 2;
+	text-decoration: none;
+	color: black;
+}
