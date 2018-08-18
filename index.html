@@ -22,13 +22,13 @@
 				<h1>Sketch: A First Look Into Using Javascript</h1>
 			</div>
 			<div></div>
-			<div class="left-container left-grid">
+			<div class="left-container">
 				<button class="reset-button"><h2>RST</h2></button>
 				<form id="dim" type="text"><button form="dim" type="submit" class="canvas-dimension"><h2>DIM</h2></button></form>
-				<input type="text" name="name">
+				<input class="user-dim" type="text" name="name">
 			</div>
-			<div class="canvas-container canvas-grid"></div>
-			<div class="right-container right-grid">
+			<div class="canvas-container"></div>
+			<div class="right-container">
 				<button class="erase"><h2>ERA</h2></button>
 				<button class="rainbow"><h2>RBW</h2></button>
 			</div>
@@ -39,33 +39,35 @@
 	</body>
 	
 	<script>
+	let numOfPixelsInCanvas = 500;
 	let gridSize = 32;
 	const container = document.querySelector('.canvas-container');
 	
 	//Creates CSS grid and fills grid with <div class="canvas"></div>
-	container.style.display = 'grid';
-	container.style.gridTemplateColumns = 'repeat(32, 1fr)';
-	container.style.gridTemplateRows = 'repeat(32, 1fr)';
-	for (var i = 0; i < gridSize*gridSize; i++) {
-		const content = document.createElement('div');
-		content.classList.add('canvas');
-		container.appendChild(content);
+	function createCanvas() {
+			for (let i = 0; i < gridSize; i++) {
+				for (let j = 0; j < gridSize; j++) {
+					let content = document.createElement('div');
+					let size = 100/gridSize + '%';
+					content.setAttribute('class', 'canvas');
+					content.setAttribute('style', `width: ${size}; height: ${size}`);
+					container.appendChild(content);
+				}
+			}
+			//Converts nodelist to an array and steps through them to set listeners 
+			const pixel = Array.from(document.querySelectorAll('.canvas'));
+				for (var i = 0; i < gridSize*gridSize; i++) {
+				pixel[i].addEventListener('mouseover', mouseOver); 
+				}
 	}
 	//****************************************************************
-	
-	//Converts nodelist to an array and steps through them to set listeners 
-	const pixel = Array.from(document.querySelectorAll('.canvas'));
-	for (var i = 0; i < gridSize*gridSize; i++) {
-		pixel[i].addEventListener('mouseover', mouseOver); 
-	}
-	//*****************************************************************
 	
 	function mouseOver() {
 		this.style.backgroundColor = 'black';
 	}
 	
-	
-</script>
+
+	createCanvas();
 
 	</script>
 	

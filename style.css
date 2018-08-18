@@ -26,14 +26,14 @@ h2 {
 	padding-top: 0px;
 	padding-bottom: 27px;
 	display: grid;
-	grid-template-columns: auto auto auto;
+	grid-template-columns: auto 500px auto;
 	grid-template-rows: auto 500px 13px;
 	position: absolute;
 	background-color: coral;
 	border: 5px solid black;
 	border-radius: 20px;
-	margin-left: 20%;
-	margin-right: 20%;
+	margin-left: 25%;
+	margin-right: 25%;
 	margin-top: 10px;
 	margin-bottom: 0px;
 }
@@ -43,7 +43,7 @@ h2 {
 }
 .canvas {
 	background-color: white;
-	border: 1px solid silver;
+	float: left;
 }
 .header-container {
 	display: grid;
@@ -58,10 +58,7 @@ h2 {
 	grid-template-columns: auto;
 	grid-template-rows: 2fr repeat(4, 1fr);
 }
-.left-container, button, form {
-	border: 1px dotted red;
-	z-index: 999;
-}
+
 .reset-button {
 	grid-column: 1;
 	grid-row: 1;
